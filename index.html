@@ -12,7 +12,12 @@
     <table>
       <tr>
         <td>Raise Hand</td>
-        <td><input type="text" value="✋" id="myInputClap" size="2" style="text-align:center;" readonly></td>
+        <td><input type="text" value="✋" id="myInputRaise" size="2" style="text-align:center;" readonly></td>
+        <td><button onclick="myFunctionRaise()">Copy</button></td>
+      </tr>
+      <tr>
+        <td>Clap</td>
+        <td><input type="text" value="👏" id="myInputClap" size="2" style="text-align:center;" readonly></td>
         <td><button onclick="myFunctionClap()">Copy</button></td>
       </tr>
     </table>
@@ -32,6 +37,20 @@
         /* Alert the copied text */
         alert("Copied the emoji: " + copyText.value);
       }
+      function myFunctionRaise() {
+        /* Get the text field */
+        var copyText = document.getElementById("myInputRaise");
+
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+
+        /* Alert the copied text */
+        alert("Copied the emoji: " + copyText.value);
+      }      
     </script>
   </body>
 </html>
