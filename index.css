@@ -1,0 +1,217 @@
+/* General styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #007bff;
+    transition: background-color 0.3s ease;
+    padding: 0.5rem;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.switch-container {
+    margin-right: 20px;
+}
+
+/* Main container */
+.main-container {
+    display: flex;
+    margin-top: 56px; /* Adjust for navbar height */
+    height: calc(100vh - 56px); /* Prevent overflow */
+    flex-direction: row;
+    transition: margin-left 0.3s ease;
+}
+
+/* Sidebar */
+.sidebar-wrapper {
+    width: 250px;
+    background-color: #343a40;
+    color: #fff;
+    height: 100%;
+    position: fixed;
+    overflow-y: auto;
+    transition: background-color 0.3s ease;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: block;
+}
+
+.submenu {
+    margin-top: 20px;
+}
+
+.sub-menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 15px;
+    background-color: #495057;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sub-menu-button:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.sub-menu-button i {
+    margin-right: 10px;
+}
+
+/* Markdown Viewer */
+.markdown-body {
+    box-sizing: border-box;
+    min-width: 200px;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 45px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+/* Make markdownViewer responsive */
+.markdown-body img {
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto;
+}
+
+/* Desktop (wide) view adjustments */
+@media (min-width: 768px) {
+    .main-container {
+        flex-direction: row;
+    }
+
+    /* Content area */
+    .content-wrapper {
+        margin-left: 250px; /* Sidebar width */
+        padding: 20px;
+        flex-grow: 1;
+        background-color: #f8f9fa;
+    }
+
+    /* Sidebar width */
+    .sidebar-wrapper {
+        width: 250px; /* Fixed sidebar width */
+    }
+
+    /* Ensure markdown content is not too wide */
+    .markdown-body {
+        max-width: 900px; /* Limit max width for readability */
+        padding: 20px; /* Add some padding inside the markdown viewer */
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+    /* Mobile adjustments */
+    .sidebar-wrapper {
+        display: none; /* Hide sidebar by default on mobile */
+    }
+
+    .content-wrapper {
+        margin-left: 0; /* Full-width content */
+        padding: 10px;
+    }
+
+    /* Make markdownViewer more responsive */
+    .markdown-body {
+        padding: 15px;
+        margin: 10px; /* Adjust margins for mobile */
+    }
+
+    /* Navbar toggler (hamburger menu) */
+    .navbar-toggler {
+        display: block;
+    }
+
+    /* Active state for sidebar when toggled */
+    .sidebar-wrapper.active {
+        display: block; /* Show sidebar when active */
+        width: 100%;
+        top: 56px;
+    }
+
+    /* Make submenu items display on mobile */
+    .submenu {
+        display: none;
+    }
+
+    .submenu.active {
+        display: block;
+    }
+
+    /* Adjust content area for mobile */
+    .content-wrapper {
+        margin-left: 0;
+        padding: 10px;
+    }
+}
+
+/* Switch button styling */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+.switch input:checked + .slider {
+    background-color: #007bff;
+}
+
+.switch input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+.sidebar-footer{
+    color: cadetblue;
+    font-size: xx-small;
+}
