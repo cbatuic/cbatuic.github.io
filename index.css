@@ -211,7 +211,26 @@ html, body {
     transform: translateX(14px);
 }
 
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.navbar.dark-mode {
+    background-color: #333;
+}
+
+.sidebar-wrapper.dark-mode {
+    background-color: #212121;
+}
+
 .sidebar-footer{
-    color: cadetblue;
-    font-size: xx-small;
+    font-size:xx-small;
+    color:cadetblue;
+}
+
+.content-wrapper.dark-mode {
+    background-color: #333;
+    color: #e0e0e0;
 }
